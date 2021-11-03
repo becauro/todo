@@ -32,6 +32,7 @@ export class TodoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.submitHandler}>
+      {/* // <form> */}
         <div className="form-group">
             <label htmlFor="text">Text:</label>
             <input
@@ -44,6 +45,7 @@ export class TodoForm extends React.Component {
         </div>
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
+          {/* <button type="submit" className="btn btn-primary" onClick={() => this.submitHandler()}> */}
           Save Todo
           </button>
         </div>
