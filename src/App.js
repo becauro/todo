@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Switch, Route, } from 'react-router-dom';
+import TodoList from './components/TodoList';
+import EditTodo from './components/EditTodo';
+import CreateTodo from './components/CreateTodo';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route exact path="/" component={TodoList}/>
+        <Route exact path="/edit/:id" component={EditTodo}/>
+        <Route exact path="/" component={CreateTodo}/>
+      </Switch>
     </div>
   );
 }
