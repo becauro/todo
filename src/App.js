@@ -3,8 +3,11 @@ import { Switch, Route, Link } from 'react-router-dom';
 import TodoList from './pages/TodoList';
 import EditTodo from './pages/EditTodo';
 import CreateTodo from './pages/CreateTodo';
-
+import { fillLocalstorage } from './services/fillLocalStorage'
 function App() {
+
+  fillLocalstorage(); // DEV: Only for development purpose;
+  
   return (
     <div>
       <nav className="navbar bg-light navbar-expand-lg navbar-light">
