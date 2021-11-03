@@ -1,10 +1,7 @@
 import React from 'react';
-export default class CreateTodo extends React.Component {
-    // constructor() {
-    //     super();
-    // }
+import { TodoForm } from "../components/TodoForm";
+import { useHistory } from "react-router-dom";
 
-    render() {
-        return <span> I am CreateTodo Component </span>
-    }
+export default class CreateTodo extends React.Component {
+    
 }
