@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, } from 'react-router-dom';
 import TodoList from './components/TodoList';
 import EditTodo from './components/EditTodo';
-// import CreateTodo from './components/CreateTodo';
+import CreateTodo from './components/CreateTodo';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={TodoList}/>
         <Route exact path="/edit/:id" component={EditTodo}/>
-        {/* <Route exact path="/" component={CreateTodo}/> */}
+        <Route exact path="/create" component={CreateTodo}/>
       </Switch>
     </div>
   );
