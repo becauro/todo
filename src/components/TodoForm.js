@@ -26,14 +26,14 @@ export class TodoForm extends React.Component {
     return (
       <form onSubmit={this.submitHandler}>
         <div className="form-group">
-            <label htmlFor="text">Text:</label>
-            <input
-            onChange={ this.handleField }
-            className="form-control"
-            type="text"
-            name="text"
-            id="text"
-            />
+          <label htmlFor="text">Text:</label>
+          <input
+          onChange={ this.handleField }
+          className="form-control"
+          type="text"
+          name="text"
+          id="text"
+          />
         </div>
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
