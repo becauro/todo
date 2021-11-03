@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import TodoList from './components/TodoList';
-import EditTodo from './components/EditTodo';
-import CreateTodo from './components/CreateTodo';
+import TodoList from './pages/TodoList';
+import EditTodo from './pages/EditTodo';
+import CreateTodo from './pages/CreateTodo';
 
 function App() {
   return (
