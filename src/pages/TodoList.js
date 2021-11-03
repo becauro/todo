@@ -1,16 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { listTodo } from '../services/api';
+// let getTaks = listTodo() ? listTodo() : []; // OK
+
 export default class TodoList extends React.Component {
     constructor() {
         super();
 
-        let tasks = [ {id: 1, task: 'Estudar react', status: 'pedente'}, 
-        {id: 2, task: 'Estudar heroku', status: 'pronto'}]
+        // let tasks = [ {id: 1, task: 'Estudar react', status: 'pedente'}, 
+        // {id: 2, task: 'Estudar heroku', status: 'pronto'}]
+      
+    let getTaks = listTodo();
+       
 
         this.state = {
-          tasks,
+          tasks: getTaks
         }
-    }
+    };
 
     render() {
       const { tasks } = this.state;

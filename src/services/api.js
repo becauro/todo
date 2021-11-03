@@ -1,4 +1,4 @@
 export const listTodo = () => {
-  const tasks = storage.getItem('task');
-  return tasks;
+  const tasks = localStorage.getItem('tasks');
+  return JSON.parse(tasks);
 };
