@@ -6,6 +6,7 @@ export class TodoForm extends React.Component {
 
     this.state = {
         text: '',
+        status: '',
         fulled: false
     };
     this.submitHandler = this.submitHandler.bind(this);
@@ -34,6 +35,26 @@ export class TodoForm extends React.Component {
           name="text"
           id="text"
           />
+        </div>
+        <div className="form-group">
+        <label htmlFor="pendente">
+          <input
+            name="status"
+            type="radio"
+            value="pendente"
+            onChange={ this.handleField }
+            id="pendente"
+          />
+            Pendente
+          </label>
+          <label htmlFor="andamento">
+          <input name="status" type="radio" value="andamento" onChange={ this.handleField } id="andamento" />
+            Em andamento
+          </label>
+          <label htmlFor="pronto">
+          <input name="status" type="radio" value="pronto" onChange={ this.handleField } id="pronto" />
+            Pronto
+          </label>
         </div>
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
