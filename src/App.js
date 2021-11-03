@@ -3,18 +3,17 @@ import { Switch, Route, Link } from 'react-router-dom';
 import TodoList from './components/TodoList';
 import EditTodo from './components/EditTodo';
 import CreateTodo from './components/CreateTodo';
-import './App.css';
 
 function App() {
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Todos</Link>
+      <nav className="navbar bg-light navbar-expand-lg navbar-light">
+        <ul className="navbar-nav mr-auto">
+          <li className="navbar-item">
+            <Link to="/" className="nav-link">Todos</Link>
           </li>
-          <li>
-            <Link to="/create">Create Todo</Link>
+          <li className="navbar-item">
+            <Link to="/create" className="nav-link">Create Todo</Link>
           </li>
         </ul>
       </nav>
