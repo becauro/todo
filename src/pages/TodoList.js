@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { listTodo } from '../services/api';
-// let getTaks = listTodo() ? listTodo() : []; // OK
+// let getTasks = listTodo() ? listTodo() : []; // OK
 
 export default class TodoList extends React.Component {
     constructor() {
@@ -10,11 +10,11 @@ export default class TodoList extends React.Component {
         // let tasks = [ {id: 1, task: 'Estudar react', status: 'pedente'}, 
         // {id: 2, task: 'Estudar heroku', status: 'pronto'}]
       
-    let getTaks = listTodo();
+    let getTasks = listTodo();
        
 
         this.state = {
-          tasks: getTaks
+          tasks: getTasks
         }
     };
 
