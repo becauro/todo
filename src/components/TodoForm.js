@@ -12,13 +12,6 @@ export class TodoForm extends React.Component {
     this.handleField = this.handleField.bind(this);
   };
 
-  // DEBUGGING:
-  componentDidUpdate () {
-    const { text } = this.state;
-    console.log('Estado mudando em TodoForm:');
-    console.log(text);
-  };
-
   submitHandler = () => {
     const { text } = this.state;
     const { onSubmit } = this.props;
@@ -32,7 +25,6 @@ export class TodoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.submitHandler}>
-      {/* // <form> */}
         <div className="form-group">
             <label htmlFor="text">Text:</label>
             <input
@@ -45,7 +37,6 @@ export class TodoForm extends React.Component {
         </div>
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
-          {/* <button type="submit" className="btn btn-primary" onClick={() => this.submitHandler()}> */}
           Save Todo
           </button>
         </div>

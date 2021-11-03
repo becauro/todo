@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoForm } from "../components/TodoForm";
+import { TodoForm } from "../components/TodoForm.js";
 
 export default class CreateTodo extends React.Component {
     constructor() {
@@ -11,13 +11,8 @@ export default class CreateTodo extends React.Component {
     onSubmit = (data) => {
       // await createTodo(data)
 
-      // DEBUGGING:
-      const { history: { push } } = this.props;
-      console.log('data em OnSubmit():');
-      console.log(data);
-      push("/");
-
-    
+        const { history: { push } } = this.props;
+        push("/");
     };
 
     render() {
