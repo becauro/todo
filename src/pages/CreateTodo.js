@@ -8,9 +8,22 @@ export default class CreateTodo extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   };
 
+  
   onSubmit = (data) => {
-    const { history: { push } } = this.props;
-    push("/");
+    createTodo(data)
+    .then(() => {
+
+      const getTasks = localStorage.getItem('tasks') || [];
+      console.log('O que tem no localStorage antes do push:');
+      console.log(getTasks)
+      const { history: { push } } = this.props;
+      push("/");
+
+    })
+    .catch((error) => {
+      console.log('Deu erro na hora de gravar tarefa.')
+    });
+   
   };
 
   render() {

@@ -13,10 +13,16 @@ export class TodoForm extends React.Component {
     this.handleField = this.handleField.bind(this);
   };
 
-  submitHandler = () => {
+  componentDidUpdate () {
     const { text } = this.state;
+    console.log('O estado de TodoForm');
+    console.log(text);
+  };
+
+  submitHandler = () => {
+    const { text, status } = this.state;
     const { onSubmit } = this.props;
-    onSubmit(text);
+    onSubmit({ text, status });
   };
 
   handleField({ target }) {
@@ -24,6 +30,7 @@ export class TodoForm extends React.Component {
   };
 
   render() {
+    const { text, status } = this.state;
     return (
       <form onSubmit={this.submitHandler}>
         <div className="form-group">
@@ -34,6 +41,7 @@ export class TodoForm extends React.Component {
           type="text"
           name="text"
           id="text"
+          value={text}
           />
         </div>
         <div className="form-group">
@@ -41,18 +49,18 @@ export class TodoForm extends React.Component {
           <input
             name="status"
             type="radio"
-            value="pendente"
+            value={status}
             onChange={ this.handleField }
             id="pendente"
           />
             Pendente
           </label>
           <label htmlFor="andamento">
-          <input name="status" type="radio" value="andamento" onChange={ this.handleField } id="andamento" />
+          <input name="status" type="radio" value={status} onChange={ this.handleField } id="andamento" />
             Em andamento
           </label>
           <label htmlFor="pronto">
-          <input name="status" type="radio" value="pronto" onChange={ this.handleField } id="pronto" />
+          <input name="status" type="radio" value={status} onChange={ this.handleField } id="pronto" />
             Pronto
           </label>
         </div>
