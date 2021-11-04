@@ -24,7 +24,6 @@ export class TodoForm extends React.Component {
        });
   };
 
-
   componentWillUnmount() {
     const { task, status, tasks } = this.state;
     const id = tasks.length + 1;
