@@ -1,6 +1,6 @@
 import React from 'react';
 import { TodoForm } from "../components/TodoForm.js";
-import { createTodo } from '../services/api';
+// import { createTodo } from '../services/api';
 
 export default class CreateTodo extends React.Component {
   constructor() {
@@ -8,22 +8,10 @@ export default class CreateTodo extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   };
 
-  
-  onSubmit = (data) => {
-    createTodo(data)
-    .then(() => {
+  onSubmit = () => {
+    const { history: { push } } = this.props;
+    push("/");
 
-      const getTasks = localStorage.getItem('tasks') || [];
-      console.log('O que tem no localStorage antes do push:');
-      console.log(getTasks)
-      const { history: { push } } = this.props;
-      push("/");
-
-    })
-    .catch((error) => {
-      console.log('Deu erro na hora de gravar tarefa.')
-    });
-   
   };
 
   render() {

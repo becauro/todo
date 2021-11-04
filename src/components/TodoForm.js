@@ -5,24 +5,42 @@ export class TodoForm extends React.Component {
     super();
 
     this.state = {
-        text: '',
+        task: '',
         status: '',
-        fulled: false
+        fulled: false,
+        tasks: []
     };
-    this.submitHandler = this.submitHandler.bind(this);
+
+    // this.submitHandler = this.submitHandler.bind(this);
     this.handleField = this.handleField.bind(this);
   };
 
-  componentDidUpdate () {
-    const { text } = this.state;
-    console.log('O estado de TodoForm');
-    console.log(text);
+  componentDidMount () {
+
+    const ls = JSON.parse(localStorage.getItem('tasks')) || []; // OK
+
+      this.setState({
+       tasks: ls
+       });
+  };
+
+
+  componentWillUnmount() {
+    const { task, status, tasks } = this.state;
+    const id = tasks.length + 1;
+
+    // Here we fill localStorage before umount the component:
+
+    if(task !== '') {
+      localStorage.setItem('tasks', JSON.stringify([ ...tasks, { id, task, status }]));
+    };
+
   };
 
   submitHandler = () => {
-    const { text, status } = this.state;
     const { onSubmit } = this.props;
-    onSubmit({ text, status });
+
+    onSubmit();
   };
 
   handleField({ target }) {
@@ -30,7 +48,7 @@ export class TodoForm extends React.Component {
   };
 
   render() {
-    const { text, status } = this.state;
+    const { task } = this.state;
     return (
       <form onSubmit={this.submitHandler}>
         <div className="form-group">
@@ -39,28 +57,28 @@ export class TodoForm extends React.Component {
           onChange={ this.handleField }
           className="form-control"
           type="text"
-          name="text"
+          name="task"
           id="text"
-          value={text}
+          value={task}
           />
         </div>
         <div className="form-group">
         <label htmlFor="pendente">
           <input
+            onChange={ this.handleField }
             name="status"
             type="radio"
-            value={status}
-            onChange={ this.handleField }
+            value='pendente'
             id="pendente"
           />
             Pendente
           </label>
           <label htmlFor="andamento">
-          <input name="status" type="radio" value={status} onChange={ this.handleField } id="andamento" />
+          <input name="status" type="radio" value='andamento' onChange={ this.handleField } id="andamento" />
             Em andamento
           </label>
           <label htmlFor="pronto">
-          <input name="status" type="radio" value={status} onChange={ this.handleField } id="pronto" />
+          <input name="status" type="radio" value='pronto' onChange={ this.handleField } id="pronto" />
             Pronto
           </label>
         </div>
