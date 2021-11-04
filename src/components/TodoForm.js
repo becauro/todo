@@ -1,4 +1,5 @@
 import React from "react";
+import { getAll } from '../services/api_localStorage';
 
 export class TodoForm extends React.Component {
  constructor() {
@@ -11,17 +12,16 @@ export class TodoForm extends React.Component {
         tasks: []
     };
 
-    // this.submitHandler = this.submitHandler.bind(this);
     this.handleField = this.handleField.bind(this);
   };
 
   componentDidMount () {
 
-    const ls = JSON.parse(localStorage.getItem('tasks')) || []; // OK
+    const ls = getAll();
 
-      this.setState({
-       tasks: ls
-       });
+    this.setState({
+     tasks: ls,
+     });
   };
 
   componentWillUnmount() {

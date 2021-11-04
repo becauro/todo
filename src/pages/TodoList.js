@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getAll } from '../services/api_localStorage';
 
 export default class TodoList extends React.Component {
     constructor() {
@@ -11,7 +12,7 @@ export default class TodoList extends React.Component {
 
    componentDidMount() {
   
-    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+    const ls = getAll();
 
       this.setState({
        tasks: ls,
@@ -41,20 +42,6 @@ export default class TodoList extends React.Component {
         return (
         
           <div className="container">
-            <div>
-              <h3>testando</h3>
-              <ul>
-              { tasks.map(
-                  ({ task }, index) => {
-                    return (
-      
-                      <li key={index}> { task } </li>
-                   
-                    )
-                  }
-                ) }
-              </ul>
-            </div>
             <div className="mt-3">
               <h3>Todo List</h3>
               <table className="table table-striped mt-3">
