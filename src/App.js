@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import TodoList from './pages/TodoList';
-import EditTodo from './pages/EditTodo';
+import UpdateTodo from './pages/UpdateTodo';
 import CreateTodo from './pages/CreateTodo';
 function App() {
   
@@ -19,7 +19,7 @@ function App() {
       </nav>
       <Switch>
         <Route exact path="/" component={TodoList}/>
-        <Route exact path="/edit/:id" component={EditTodo}/>
+        <Route exact path="/edit/:id" component={UpdateTodo}/>
         <Route exact path="/create" component={CreateTodo}/>
       </Switch>
     </div>
