@@ -35,7 +35,7 @@ export default class TodoList extends React.Component {
       const { tasks } = this.state;
 
         const rows = tasks && tasks.map(
-          (todo, index) => {
+          (todo) => {
             return (
             <tr key={todo.id}>
             <td> { todo['task'] } </td>

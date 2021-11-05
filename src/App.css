@@ -7,6 +7,40 @@
   pointer-events: none;
 }
 
+.navbar {
+  justify-content: center;
+}
+
+.navbar-nav {
+font-weight: 600;
+width: 300px;
+justify-content:space-between;
+}
+
+.navbar-item-left {
+border-right: 3px solid rgb(158, 156, 156);
+}
+
+.navbar-item {
+  width: 150px;
+}
+
+ .nav-link:hover {
+  background-color: rgb(158, 156, 156);
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  background-color: lightgrey;
+  width: 100%;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+   
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
