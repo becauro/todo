@@ -62,7 +62,6 @@ Foi usado, nesse projeto, apenas **Componentes Tipo Classe**.
 3. BACKEND: **Express** como API parar Banco de Dados e lógica de negócio, ao invés de um arquivo de API exportando funcões JS de métodos que manipulam LocalStorage. 
 5. **Arquitetura MSC** para implantar os itens anteriores.
 6. **JWT** para gerenciamento de permissões de usuários.
-7. **Heroku** para armazenar o projeto em moedo "Produção".
 
 
 ## Referencias:
