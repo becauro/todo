@@ -1,7 +1,7 @@
 import React from 'react';
 import { UpdateTodoForm } from "../components/UpdateTodoForm.js";
 
-export default class EditTodo extends React.Component {
+export default class UpdateTodo extends React.Component {
 
     onSubmit = () => {
         const { history: { push } } = this.props;
