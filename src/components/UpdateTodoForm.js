@@ -15,6 +15,11 @@ export class TodoForm extends React.Component {
     this.handleField = this.handleField.bind(this);
   };
 
+  componentDidUpdate() {
+    const { task } = this.state;
+    console.log(task);
+  }
+
   componentDidMount () {
     const { taskId } = this.props;
     const { task, status} = getById(taskId);
@@ -24,20 +29,13 @@ export class TodoForm extends React.Component {
 
   };
 
-  // componentWillUnmount() {
-  //   const { task, status, tasks } = this.state;
-  //   const id = tasks.length + 1;
-
-  //   // Here we fill localStorage before umount the component:
-
-  //   if(task !== '') {
-  //     localStorage.setItem('tasks', JSON.stringify([ ...tasks, { id, task, status }]));
-  //   };
-
-  // };
-
   submitHandler = () => {
-    const { onSubmit } = this.props;
+    const { onSubmit, taskId} = this.props;
+    const { task, status } = this.state;
+
+    // Here the data is going to be updated:
+
+       update(taskId, { task, status });
 
     onSubmit();
   };

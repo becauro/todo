@@ -2,17 +2,6 @@ import React from 'react';
 import { TodoForm } from "../components/UpdateTodoForm.js";
 
 export default class EditTodo extends React.Component {
-    constructor() {
-        super();
-    };
-
-    // componentDidMount() {
-
-    //  const { id }  = this.props.match.params;
-
-    //     console.log('Edit todo: qui o ID pegado da URL:');
-    //     console.log(id);
-    // };
 
     onSubmit = () => {
         const { history: { push } } = this.props;
