@@ -12,10 +12,10 @@ function App() {
       <nav className="navbar bg-light navbar-expand-lg navbar-light">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item navbar-item-left">
-            <Link to="/" className="nav-link"><span className="nav-link-span">Todos</span></Link>
+            <Link to="/" className="nav-link"><span className="nav-link-span">Listar</span></Link>
           </li>
           <li className="navbar-item navbar-item-right">
-            <Link to="/create" className="nav-link"><span className="nav-link-span nav-link-span-right" >Create Todo</span></Link>
+            <Link to="/create" className="nav-link"><span className="nav-link-span nav-link-span-right" >Criar</span></Link>
           </li>
         </ul>
       </nav>
