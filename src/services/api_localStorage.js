@@ -9,3 +9,13 @@ export const getAll = () => {
     return ls
 }
 
+
+export const update = (id, data) => {
+    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    const indexFound = ls.findIndex((item) => (item.id === id));
+
+    ls[indexFound] = data;
+
+    localStorage.setItem('tasks', JSON.stringify(ls));
+}
