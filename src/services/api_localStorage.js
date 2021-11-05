@@ -17,7 +17,7 @@ export const update = (id, data) => {
     ls[indexFound] = { ...ls[indexFound], ...data };
 
     localStorage.setItem('tasks', JSON.stringify(ls));
-}
+};
 
 export const getById = (id) => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -25,4 +25,14 @@ export const getById = (id) => {
     const taskFound = ls.find((item) => item.id === parseInt(id, 10));
 
     return taskFound;
+};
+
+export const deleteIt = (id) => {
+    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    const indexFound = ls.findIndex((item) => (item.id === parseInt(id, 10)));
+
+    ls.splice(indexFound, 1);
+
+    localStorage.setItem('tasks', JSON.stringify(ls));
 };
