@@ -7,8 +7,7 @@ export const getAll = () => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
     return ls
-}
-
+};
 
 export const update = (id, data) => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -19,3 +18,11 @@ export const update = (id, data) => {
 
     localStorage.setItem('tasks', JSON.stringify(ls));
 }
+
+export const getById = (id) => {
+    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    const taskFound = ls.find((item) => item.id === parseInt(id));
+
+    return taskFound;
+};

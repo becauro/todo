@@ -1,5 +1,5 @@
 import React from "react";
-import { getAll } from '../services/api_localStorage';
+import { getById, update } from '../services/api_localStorage';
 
 export class TodoForm extends React.Component {
  constructor() {
@@ -16,12 +16,20 @@ export class TodoForm extends React.Component {
   };
 
   componentDidMount () {
+    const { taskId } = this.props;
+    const oldTask = getById(taskId);
 
-    const ls = getAll();
+    // console.log('taskId em UpdateTodoForm:');
+    // console.log(taskId);
 
-    this.setState({
-     tasks: ls,
-     });
+    // const oldTask = update(taskId);
+
+    console.log('tarefa sendo editada:');
+    console.log(oldTask);
+
+    // this.setState({
+    //  tasks: oldTask,
+    //  });
   };
 
   componentWillUnmount() {
