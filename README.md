@@ -6,6 +6,8 @@
 Esse é o código de uma aplicação básica de lista de Lista de Tarefas.
 Bora se organizar ?
 
+Veja a aplicação [rodando no Browser](https://becauro-todo-list.herokuapp.com/), graças ao **Heroku**.
+
 ### Funcionalidades básicas:
 
 * **Visualização** da lista de tarefas;
