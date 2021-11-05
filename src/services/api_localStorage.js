@@ -22,7 +22,7 @@ export const update = (id, data) => {
 export const getById = (id) => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
-    const taskFound = ls.find((item) => item.id === parseInt(id));
+    const taskFound = ls.find((item) => item.id === parseInt(id, 10));
 
     return taskFound;
 };

@@ -17,32 +17,24 @@ export class TodoForm extends React.Component {
 
   componentDidMount () {
     const { taskId } = this.props;
-    const oldTask = getById(taskId);
+    const { task, status} = getById(taskId);
 
-    // console.log('taskId em UpdateTodoForm:');
-    // console.log(taskId);
-
-    // const oldTask = update(taskId);
-
-    console.log('tarefa sendo editada:');
-    console.log(oldTask);
-
-    // this.setState({
-    //  tasks: oldTask,
-    //  });
-  };
-
-  componentWillUnmount() {
-    const { task, status, tasks } = this.state;
-    const id = tasks.length + 1;
-
-    // Here we fill localStorage before umount the component:
-
-    if(task !== '') {
-      localStorage.setItem('tasks', JSON.stringify([ ...tasks, { id, task, status }]));
-    };
+    // Load currently data
+    this.setState({ task, status});
 
   };
+
+  // componentWillUnmount() {
+  //   const { task, status, tasks } = this.state;
+  //   const id = tasks.length + 1;
+
+  //   // Here we fill localStorage before umount the component:
+
+  //   if(task !== '') {
+  //     localStorage.setItem('tasks', JSON.stringify([ ...tasks, { id, task, status }]));
+  //   };
+
+  // };
 
   submitHandler = () => {
     const { onSubmit } = this.props;
@@ -55,7 +47,7 @@ export class TodoForm extends React.Component {
   };
 
   render() {
-    const { task } = this.state;
+    const { task, status } = this.state;
     return (
       <form onSubmit={this.submitHandler}>
         <div className="form-group">
@@ -72,6 +64,7 @@ export class TodoForm extends React.Component {
         <div className="form-group">
         <label htmlFor="pendente">
           <input
+            checked={ status === "pendente" || false }
             onChange={ this.handleField }
             name="status"
             type="radio"
@@ -81,11 +74,11 @@ export class TodoForm extends React.Component {
             Pendente
           </label>
           <label htmlFor="andamento">
-          <input name="status" type="radio" value='andamento' onChange={ this.handleField } id="andamento" />
+          <input  checked={ status === "andamento" || false } name="status" type="radio" value='andamento' onChange={ this.handleField } id="andamento" />
             Em andamento
           </label>
           <label htmlFor="pronto">
-          <input name="status" type="radio" value='pronto' onChange={ this.handleField } id="pronto" />
+          <input checked={ status === "pronto" || false } name="status" type="radio" value='pronto' onChange={ this.handleField } id="pronto" />
             Pronto
           </label>
         </div>
