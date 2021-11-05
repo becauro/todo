@@ -15,11 +15,6 @@ export class TodoForm extends React.Component {
     this.handleField = this.handleField.bind(this);
   };
 
-  componentDidUpdate() {
-    const { task } = this.state;
-    console.log(task);
-  }
-
   componentDidMount () {
     const { taskId } = this.props;
     const { task, status} = getById(taskId);

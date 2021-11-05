@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import TodoList from './pages/TodoList';
+import ListTodo from './pages/ListTodo';
 import UpdateTodo from './pages/UpdateTodo';
 import CreateTodo from './pages/CreateTodo';
 function App() {
@@ -18,7 +18,7 @@ function App() {
         </ul>
       </nav>
       <Switch>
-        <Route exact path="/" component={TodoList}/>
+        <Route exact path="/" component={ListTodo}/>
         <Route exact path="/edit/:id" component={UpdateTodo}/>
         <Route exact path="/create" component={CreateTodo}/>
       </Switch>
