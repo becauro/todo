@@ -1,5 +1,6 @@
 import React from "react";
 import { getAll } from '../services/api_localStorage';
+import { idGenerator } from "../utils/IdGenerator";
 
 export class CreateTodoForm extends React.Component {
  constructor() {
@@ -26,7 +27,8 @@ export class CreateTodoForm extends React.Component {
 
   componentWillUnmount() {
     const { task, status, tasks } = this.state;
-    const id = tasks.length + 1;
+    // const id = tasks.length + 1;
+    const id = idGenerator();
 
     // Here we fill localStorage before umount the component:
 
@@ -73,7 +75,7 @@ export class CreateTodoForm extends React.Component {
             Pendente
           </label>
           <label htmlFor="andamento">
-          <input name="status" type="radio" value='andamento' onChange={ this.handleField } id="andamento" />
+          <input name="status" type="radio" value='Em andamento' onChange={ this.handleField } id="andamento" />
             Em andamento
           </label>
           <label htmlFor="pronto">
