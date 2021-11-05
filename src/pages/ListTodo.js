@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getAll } from '../services/api_localStorage';
+import { getAll, remove } from '../services/api_localStorage';
 
 export default class TodoList extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-          tasks: []
+          tasks: [],
         }
+        this.removeTodo = this.removeTodo.bind(this);
     };
 
    componentDidMount() {
@@ -20,16 +21,28 @@ export default class TodoList extends React.Component {
   
    };
 
+
+   removeTodo(id) {
+
+    // console.log('ID a ser removido:');
+    // console(id)
+    remove(id);
+
+    window.location.reload();
+   };
+
     render() {
       const { tasks } = this.state;
 
         const rows = tasks && tasks.map(
-          (todo) => {
+          (todo, index) => {
             return (
             <tr key={todo.id}>
             <td> { todo['task'] } </td>
             <td>
               <Link to={`/edit/${todo.id}`}>Edit</Link>
+              &nbsp; &nbsp;
+              <button onClick={() => this.removeTodo(todo.id)}> Remove </button>
             </td>
             <td>
                 { todo.status }
@@ -48,7 +61,7 @@ export default class TodoList extends React.Component {
               <thead>
                   <tr>
                   <th>Task</th>
-                  <th>Action</th>
+                  <th>Actions</th>
                   <th>Status</th>
                   </tr>
               </thead>

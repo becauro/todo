@@ -27,7 +27,7 @@ export const getById = (id) => {
     return taskFound;
 };
 
-export const deleteIt = (id) => {
+export const remove = (id) => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
     const indexFound = ls.findIndex((item) => (item.id === parseInt(id, 10)));
