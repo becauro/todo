@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoForm } from "../components/TodoForm.js";
+import { CreateTodoForm } from "../components/CreateTodoForm.js";
 
 export default class CreateTodo extends React.Component {
   constructor() {
@@ -18,7 +18,7 @@ export default class CreateTodo extends React.Component {
         <div className="container">
           <div className="mt-3">
           <h3>Create Todo Item</h3>
-            <TodoForm onSubmit={this.onSubmit} />
+            <CreateTodoForm onSubmit={this.onSubmit} />
           </div>
         </div>
     );
