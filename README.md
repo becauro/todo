@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Front-End de um Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Introdução:
 
-In the project directory, you can run:
+Esse é o código de uma aplicação básica de lista de Lista de Tarefas.
+Bora se organizar ?
 
-### `npm start`
+### Funcionalidades básicas:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Visualização da lista de tarefas;
+* Inserção de uma nova tarefa na lista;
+* Remoção de uma tarefa da lista;
+* Atualização de uma tarefa da lista;
+* Cada tarefa possui um dos seguintes status editável: pendente, em andamento ou pronto;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Tecnologias usadas
 
-### `npm test`
+* **React** 
+* **Bootstrap**
+* **CSS**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requisitos para configurar e rodar o projeto em modo desenvolvimento:
 
-### `npm run build`
+1. Ter **Node.js** para baixar as dependência via NPM.
+2. Ter a **porta 3000** disponível ou configurar outra no package.json.
+3. Ter um **Browser** como _Chrome_ ou _Firefox_ pra Interação com a Aplicação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Como configurar o projeto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Um vez que no package.json já tem as dependências necessários, basta digitar um comando na pasta do repositório clonado:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    `npm install`
 
-### `npm run eject`
+### Como executar o projeto:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. `npm start`
+2. Abrir o navegador e digitar: **http://localhost:3000**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sobre a estrurura do projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para fins de testes de desenvovimento e de forma tempoária, depedendo do momento que esteja lendo esse Readme, foi usado _Local Storage_ para armazenamento dos dados (ou seja, fazendo o papel de um Banco de Dados) e também foi usado como um intermediador de dados entre as páginas e componentes (Ou seja, subtituindo Redux).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Parte da Lógica, que seria em uma Camada Service de um back-end, do modelo MSC, está no arquivo `src/services/api_localStorage.js`.
 
-## Learn More
+Foi usado nesse projeto, apenas Componentes Tipo Classe.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Futuras Features:
 
-### Code Splitting
+1. Ordenar tarefas por Ordem alfabética, Data de Criação ou Status.
+2. Botão para redirecinar para página de listagem ao invés de ir automaticamente após Criação ou Inserção de tarefas.
+3. Botão de desfazer mudanção no formulario de UpdateTodo.
+4. Cadastro e Login dos Usuários da plataforma, cada um tendo com sua seção de gereniamento de tarefas independentemente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Futuras Tecnologias :
 
-### Analyzing the Bundle Size
+1. **Redux** como intermediador, ao invés de localStorage.
+2. BACKEND: **MongoDb** como Banco de Dados, ao invés de localStorage.
+3. BACKEND: **Express** como API parar Banco de Dados e lógica de negócio, ao invés de um arquivo de API exportando funcões JS de métodos que manipulam LocalStorage. 
+5. **Arquitetura MSC** para implantar os itens anteriores.
+6. **JWT** para gerenciamento de permissões de usuários.
+7. **Heroku** para armazenar o projeto em moedo "Produção".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Referencias:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Trybe Course](https://www.betrybe.com/)
+[Este Repositório](https://github.com/satansdeer/mern-crud);
+[Stackoverflow](https://stackoverflow.com/)
