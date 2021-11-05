@@ -40,12 +40,12 @@ export default class TodoList extends React.Component {
             <tr key={todo.id}>
             <td> { todo['task'] } </td>
             <td>
+                { todo.status }
+            </td>
+            <td>
               <Link to={`/edit/${todo.id}`}>Edit</Link>
               &nbsp; &nbsp;
               <button onClick={() => this.removeTodo(todo.id)}> Remove </button>
-            </td>
-            <td>
-                { todo.status }
             </td>
             </tr>
           )
@@ -61,8 +61,8 @@ export default class TodoList extends React.Component {
               <thead>
                   <tr>
                   <th>Task</th>
-                  <th>Actions</th>
                   <th>Status</th>
+                  <th>Actions</th>
                   </tr>
               </thead>
               <tbody>
