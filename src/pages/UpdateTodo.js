@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoForm } from "../components/UpdateTodoForm.js";
+import { UpdateTodoForm } from "../components/UpdateTodoForm.js";
 
 export default class EditTodo extends React.Component {
 
@@ -16,7 +16,7 @@ export default class EditTodo extends React.Component {
             <div className="container">
               <div className="mt-3">
               <h3>Update Todo Item</h3>
-                <TodoForm taskId={id} onSubmit={this.onSubmit} />
+                <UpdateTodoForm taskId={id} onSubmit={this.onSubmit} />
               </div>
             </div>
         );

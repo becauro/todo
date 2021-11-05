@@ -1,7 +1,7 @@
 import React from "react";
 import { getById, update } from '../services/api_localStorage';
 
-export class TodoForm extends React.Component {
+export class UpdateTodoForm extends React.Component {
  constructor() {
     super();
 
