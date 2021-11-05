@@ -67,7 +67,7 @@ export class UpdateTodoForm extends React.Component {
             Pendente
           </label>
           <label htmlFor="andamento">
-          <input  checked={ status === "andamento" || false } name="status" type="radio" value='andamento' onChange={ this.handleField } id="andamento" />
+          <input  checked={ status === "Em andamento" || false } name="status" type="radio" value='Em andamento' onChange={ this.handleField } id="andamento" />
             Em andamento
           </label>
           <label htmlFor="pronto">
