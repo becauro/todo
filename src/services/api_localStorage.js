@@ -30,7 +30,7 @@ export const getById = (id) => {
 export const remove = (id) => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
-    const indexFound = ls.findIndex((item) => (item.id === parseInt(id, 10)));
+    const indexFound = ls.findIndex((item) => (item.id === id));
 
     ls.splice(indexFound, 1);
 
