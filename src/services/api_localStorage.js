@@ -10,7 +10,7 @@ export const getAll = () => {
 };
 
 export const update = (id, data) => {
-    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+    const ls = getAll();
 
     const indexFound = ls.findIndex((item) => (item.id === parseInt(id, 10)));
 
@@ -20,7 +20,7 @@ export const update = (id, data) => {
 };
 
 export const getById = (id) => {
-    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+    const ls = getAll();
 
     const taskFound = ls.find((item) => item.id === parseInt(id, 10));
 
@@ -28,7 +28,7 @@ export const getById = (id) => {
 };
 
 export const remove = (id) => {
-    const ls = JSON.parse(localStorage.getItem('tasks')) || [];
+    const ls = getAll();
 
     const indexFound = ls.findIndex((item) => (item.id === id));
 
