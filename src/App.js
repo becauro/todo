@@ -3,14 +3,12 @@ import { Switch, Route } from 'react-router-dom';
 import ListTodo from './pages/ListTodo';
 import UpdateTodo from './pages/UpdateTodo';
 import CreateTodo from './pages/CreateTodo';
-import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
   
   return (
     <div>
-      <NavBar />
       <Switch>
         <Route exact path="/" component={ListTodo}/>
         <Route exact path="/edit/:id" component={UpdateTodo}/>

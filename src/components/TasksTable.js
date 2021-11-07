@@ -7,8 +7,9 @@ export default class TasksTable extends React.Component {
         super(props);
         this.state = {
           tasks: [],
-        }
+        };
         this.removeTodo = this.removeTodo.bind(this);
+        this.updateStorage = this.updateStorage.bind(this);
     };
 
    componentDidMount() {
@@ -18,39 +19,23 @@ export default class TasksTable extends React.Component {
       this.setState({
        tasks: ls,
        });
-  
    };
 
+   updateStorage () {
+    const ls = getAll();
+    this.setState({
+      tasks: ls,
+    });
+   }
 
    removeTodo(id) {
-    const ls = getAll();
-
-    remove(id);
-
-    this.setState({
-     tasks: ls,
-    });
-   };
+     remove(id);
+     this.updateStorage();
+   };   
 
     render() {
-      const { tasks } = this.state;
-
-        const rows = tasks && tasks.map(
-          (todo) => {
-            return (
-            <tr key={todo.id}>
-            <td> { todo['task'] } </td>
-            <td> { todo.status } </td>
-            <td> { todo.creationDate } </td>
-            <td> 
-              <Link to={`/edit/${todo.id}`}>Edit</Link>
-              &nbsp; &nbsp;
-              <button onClick={() => this.removeTodo(todo.id)}> Remove </button>
-            </td>
-            </tr>
-          )
-          }
-        );
+          
+        const { tasks } = this.state;
 
         return (
         
@@ -67,7 +52,23 @@ export default class TasksTable extends React.Component {
                   </tr>
               </thead>
               <tbody>
-                { rows }
+                {tasks && tasks.map(
+                  (todo) => {
+                  return (
+                  <tr key={todo.id}>
+                  <td> { todo['task'] } </td>
+                  <td> { todo.status } </td>
+                  <td> { todo.creationDate } </td>
+                  <td> 
+                      <Link to={`/edit/${todo.id}`}>Edit</Link>
+                      &nbsp; &nbsp;
+                      <button onClick={() => this.removeTodo(todo.id)}> Remove </button>
+                  </td>
+                  </tr>
+                  )
+                  }
+                 )
+               }
               </tbody>
               </table>
             </div>
