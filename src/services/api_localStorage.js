@@ -3,11 +3,22 @@
 // That means: For test, as on this specific web software there is tiny data amount.
 // So as we already know, localStorage has not so much space to storage data.
 
+import { idGenerator } from "../utils/IdGenerator";
+
 export const getAll = () => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
     return ls
 };
+
+export const create = (newData) => {
+  const ls = getAll();
+  const { task, status } = newData;
+
+  const id = idGenerator();
+
+  localStorage.setItem('tasks', JSON.stringify([ ...ls, { id, task, status }]));
+}
 
 export const update = (id, data) => {
     const ls = getAll();

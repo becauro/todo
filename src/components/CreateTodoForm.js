@@ -1,6 +1,5 @@
 import React from "react";
-import { getAll } from '../services/api_localStorage';
-import { idGenerator } from "../utils/IdGenerator";
+import { create } from '../services/api_localStorage';
 
 export class CreateTodoForm extends React.Component {
  constructor() {
@@ -9,33 +8,15 @@ export class CreateTodoForm extends React.Component {
     this.state = {
         task: '',
         status: '',
-        fulled: false,
-        tasks: []
     };
 
     this.handleField = this.handleField.bind(this);
   };
 
-  componentDidMount () {
-
-    const ls = getAll();
-
-    this.setState({
-     tasks: ls,
-     });
-  };
-
   componentWillUnmount() {
-    const { task, status, tasks } = this.state;
-    // const id = tasks.length + 1;
-    const id = idGenerator();
-
-    // Here we fill localStorage before umount the component:
-
-    if(task !== '') {
-      localStorage.setItem('tasks', JSON.stringify([ ...tasks, { id, task, status }]));
-    };
-
+    const { status, task } = this.state;
+    
+    create({ status, task });
   };
 
   submitHandler = () => {
