@@ -18,6 +18,10 @@ export const create = (newData) => {
   const id = idGenerator();
 
   localStorage.setItem('tasks', JSON.stringify([ ...ls, { id, task, status }]));
+  
+  localStorage.setItem('um teste', 'Valor desse teste, rs');
+
+
 }
 
 export const update = (id, data) => {
@@ -44,6 +48,10 @@ export const remove = (id) => {
     const indexFound = ls.findIndex((item) => (item.id === id));
 
     ls.splice(indexFound, 1);
+
+    if(ls.length === 0) {
+      return localStorage.removeItem('tasks');
+    };
 
     localStorage.setItem('tasks', JSON.stringify(ls));
 };

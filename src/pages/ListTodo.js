@@ -24,8 +24,6 @@ export default class TodoList extends React.Component {
 
    removeTodo(id) {
 
-    // console.log('ID a ser removido:');
-    // console(id)
     remove(id);
 
     window.location.reload();
