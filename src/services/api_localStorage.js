@@ -12,8 +12,15 @@ export const getAll = () => {
     const field = JSON.parse(localStorage.getItem('orderBy')) || '';
 
     if(field && field !== '') {
+
       ls.sort(function (a, b) {
-        return a[field].localeCompare(b[field]);
+      //   return a[field].localeCompare(b[field]);
+      if (a[field] < b[field] ) {
+        return -1;
+      } else if (a[field] > b[field]) {
+        return 1;
+      };
+        return 0;
       });
     };
 
