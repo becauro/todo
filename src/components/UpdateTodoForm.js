@@ -7,8 +7,7 @@ export class UpdateTodoForm extends React.Component {
 
     this.state = {
         task: '',
-        status: '',
-        tasks: []
+        status: ''
     };
 
     this.handleField = this.handleField.bind(this);
