@@ -4,6 +4,7 @@
 // So as we already know, localStorage has not so much space to storage data.
 
 import { idGenerator } from "../utils/IdGenerator";
+import { dateCreator } from "../utils/DateCreator";
 
 export const getAll = () => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -16,11 +17,9 @@ export const create = (newData) => {
   const { task, status } = newData;
 
   const id = idGenerator();
+  const creationDate = dateCreator();
 
-  localStorage.setItem('tasks', JSON.stringify([ ...ls, { id, task, status }]));
-  
-  localStorage.setItem('um teste', 'Valor desse teste, rs');
-
+  localStorage.setItem('tasks', JSON.stringify([ ...ls, { id, task, status, creationDate }]));
 
 }
 
