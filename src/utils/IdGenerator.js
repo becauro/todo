@@ -4,18 +4,23 @@ export const idGenerator =  () => {
     let done = false;
     let newId = ls.length + 1;
 
+
+    const availableId = () => ls.every((item) => item.id !== newId);
+  
     while (!done) {
 
-        const available = ls.every((item) => item.id !== newId);
+      const result = availableId();
 
-        if(available) {
-            done = true;
-        } else {
-            newId += 1;
-        };
+      if(result) {
+          done = true;
+      } else {
+          newId += 1;
+      };
 
-    }; 
+    };
 
     return newId;
 
 }
+
+ 
