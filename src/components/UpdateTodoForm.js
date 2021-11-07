@@ -8,7 +8,6 @@ export class UpdateTodoForm extends React.Component {
     this.state = {
         task: '',
         status: '',
-        fulled: false,
         tasks: []
     };
 

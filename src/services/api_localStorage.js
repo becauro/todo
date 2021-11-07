@@ -9,7 +9,21 @@ import { dateCreator } from "../utils/DateCreator";
 export const getAll = () => {
     const ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
+    const field = JSON.parse(localStorage.getItem('orderBy')) || '';
+
+    if(field && field !== '') {
+      ls.sort(function (a, b) {
+        return a[field].localeCompare(b[field]);
+      });
+    };
+
     return ls
+};
+
+export const getOrderBy = () => {
+
+  const field = JSON.parse(localStorage.getItem('orderBy')) || '';
+  return field;
 };
 
 export const create = (newData) => {
@@ -54,3 +68,9 @@ export const remove = (id) => {
 
     localStorage.setItem('tasks', JSON.stringify(ls));
 };
+
+  export const orderByField = (field) => {
+
+  localStorage.setItem('orderBy', JSON.stringify(field));
+
+}
