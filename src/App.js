@@ -1,9 +1,9 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import ListTodo from './pages/ListTodo';
 import UpdateTodo from './pages/UpdateTodo';
 import CreateTodo from './pages/CreateTodo';
-import { NavBar } from "./components/NavBar.js";
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
