@@ -100,6 +100,7 @@ export const remove = (id) => {
     ls.splice(indexFound, 1);
 
     if(ls.length === 0) {
+      localStorage.removeItem('orderBy');
       return localStorage.removeItem('tasks');
     };
 
