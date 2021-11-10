@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { getAll, remove, orderByField, getOrderBy} from '../services/api_localStorage';
+import { getAll, remove, setOrderBy, getOrderBy} from '../services/api_localStorage';
 import OrderBy from "./OrderBy";
 
 export default class TasksTable extends React.Component {
@@ -13,6 +13,7 @@ export default class TasksTable extends React.Component {
         this.removeTodo = this.removeTodo.bind(this);
         this.updateState = this.updateState.bind(this);
         this.getFieldOrder = this.getFieldOrder.bind(this);
+        // this.removeAll =  this.removeAll.bind(this);
     };
 
    componentDidMount() {
@@ -37,9 +38,14 @@ export default class TasksTable extends React.Component {
    };
 
    getFieldOrder(field) {
-    orderByField(field);
+    setOrderBy(field);
     this.updateState();
   };
+
+  // removeAll() {
+  //   localStorage.clear();
+  //   this.updateState();
+  // };
 
     render() {
           
@@ -51,6 +57,13 @@ export default class TasksTable extends React.Component {
             <div className="mt-3">
               <h3>Todo List</h3>
               <OrderBy field={orderField} getFieldOrder={ this.getFieldOrder } />
+              <button
+                onClick={ this.removeAll }
+                type="button"
+                className="btn btn-danger"
+              >
+                Remove All
+              </button>
               <table className="table table-striped mt-3">
               <thead>
                   <tr>

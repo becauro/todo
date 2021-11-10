@@ -1,25 +1,36 @@
 import React from "react";
-
-
+import { getAllNotOrdered, getOrderBy, clearOrderBy } from '../services/api_localStorage';
 
 export default class OrderBy extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-        field: '',
-    };
-
     this.handleField = this.handleField.bind(this);
+  };
+
+  componentDidMount() {
+    const { getFieldOrder } = this.props;
+    getFieldOrder('creationDate');
+
+  };
+
+  componentWillUnmount() {
+    const tasks = getAllNotOrdered();
+    const orderBy = getOrderBy();
+    
+    if(tasks.length === 0 && orderBy !== '') {
+      clearOrderBy();
+    }
+
   };
 
   handleField({ target }) {
     const { getFieldOrder } = this.props;
-    this.setState({ field: target.value });
 
     getFieldOrder(target.value);
   };
 
+ 
   render() {
     const { field } = this.props;
 

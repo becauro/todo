@@ -9,7 +9,7 @@ import { arrayDateShaper } from "../utils/arrayDateShaper";
 export const getAll = () => {
   let ls = JSON.parse(localStorage.getItem('tasks')) || [];
 
-  const field = JSON.parse(localStorage.getItem('orderBy')) || '';
+  const field = JSON.parse(localStorage.getItem('orderBy')) || 'creationDate';
 
   if(field !== 'creationDate') {
     ls.sort(function (a, b) {
@@ -21,6 +21,7 @@ export const getAll = () => {
       return 0;
     });
 
+    
   ls = arrayDateShaper(ls);
   return ls
   };
@@ -49,66 +50,73 @@ export const getAll = () => {
 
 };
 
-export const getOrderBy = () => {
-
-  const field = JSON.parse(localStorage.getItem('orderBy')) || '';
-  return field;
-};
-
 // The data are stored in unordered mode. The functions access "database" use "getAllNotOrdered()" for that.
 
 export const getAllNotOrdered = () => {
   let ls = JSON.parse(localStorage.getItem('tasks')) || [];
-
+  
   return ls
 }
 
 export const create = (newData) => {
   const ls = getAllNotOrdered();
   const { task, status } = newData;
-
+  
   const id = idGenerator();
   const creationDate = new Date();
-
+  
   localStorage.setItem('tasks', JSON.stringify([ ...ls, { id, task, status, creationDate }]));
-
+  
 };
 
 export const update = (id, data) => {
-    const ls = getAllNotOrdered();
-
-    const indexFound = ls.findIndex((item) => (item.id === parseInt(id, 10)));
-
-    ls[indexFound] = { ...ls[indexFound], ...data };
-
-    localStorage.setItem('tasks', JSON.stringify(ls));
+  const ls = getAllNotOrdered();
+  
+  const indexFound = ls.findIndex((item) => (item.id === parseInt(id, 10)));
+  
+  ls[indexFound] = { ...ls[indexFound], ...data };
+  
+  localStorage.setItem('tasks', JSON.stringify(ls));
 };
 
 export const getById = (id) => {
-    const ls = getAllNotOrdered();
+  const ls = getAllNotOrdered();
+  
+  const taskFound = ls.find((item) => item.id === parseInt(id, 10));
+  
+  return taskFound;
+};
 
-    const taskFound = ls.find((item) => item.id === parseInt(id, 10));
+export const setOrderBy = (field) => {
+  
+  localStorage.setItem('orderBy', JSON.stringify(field));
+  
+};
 
-    return taskFound;
+export const getOrderBy = () => {
+
+  const field = JSON.parse(localStorage.getItem('orderBy')) || '';
+  return field;
+};
+
+export const clearOrderBy = () => {
+  
+  localStorage.removeItem('orderBy');
+  
 };
 
 export const remove = (id) => {
-    const ls = getAllNotOrdered();
-
-    const indexFound = ls.findIndex((item) => (item.id === id));
-
-    ls.splice(indexFound, 1);
-
-    if(ls.length === 0) {
-      localStorage.removeItem('orderBy');
-      return localStorage.removeItem('tasks');
-    };
-
-    localStorage.setItem('tasks', JSON.stringify(ls));
+  const ls = getAllNotOrdered();
+  
+  const indexFound = ls.findIndex((item) => (item.id === id));
+  
+  ls.splice(indexFound, 1);
+  
+  if(ls.length === 0) {
+    clearOrderBy();
+    return localStorage.removeItem('tasks');
+  };
+  
+  localStorage.setItem('tasks', JSON.stringify(ls));
 };
 
-  export const orderByField = (field) => {
-
-  localStorage.setItem('orderBy', JSON.stringify(field));
-
-}
