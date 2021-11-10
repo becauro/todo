@@ -13,7 +13,7 @@ export default class TasksTable extends React.Component {
         this.removeTodo = this.removeTodo.bind(this);
         this.updateState = this.updateState.bind(this);
         this.getFieldOrder = this.getFieldOrder.bind(this);
-        // this.removeAll =  this.removeAll.bind(this);
+        this.removeAll =  this.removeAll.bind(this);
     };
 
    componentDidMount() {
@@ -42,10 +42,10 @@ export default class TasksTable extends React.Component {
     this.updateState();
   };
 
-  // removeAll() {
-  //   localStorage.clear();
-  //   this.updateState();
-  // };
+  removeAll() {
+    localStorage.clear();
+    this.updateState();
+  };
 
     render() {
           
