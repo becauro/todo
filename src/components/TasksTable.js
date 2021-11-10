@@ -64,16 +64,16 @@ export default class TasksTable extends React.Component {
                 {tasks && tasks.map(
                   (todo) => {
                   return (
-                  <tr key={todo.id}>
-                  <td> { todo.task } </td>
-                  <td> { todo.status } </td>
-                  <td> { todo.creationDate } </td>
-                  <td> 
-                      <Link to={`/edit/${todo.id}`}>Edit</Link>
-                      &nbsp; &nbsp;
-                      <button onClick={() => this.removeTodo(todo.id)}> Remove </button>
-                  </td>
-                  </tr>
+                    <tr key={todo.id}>
+                    <td> { todo.task } </td>
+                    <td> { todo.status } </td>
+                    <td> { todo.creationDate } </td>
+                    <td> 
+                        <Link to={`/edit/${todo.id}`}>Edit</Link>
+                        &nbsp; &nbsp;
+                        <button onClick={() => this.removeTodo(todo.id)}> Remove </button>
+                    </td>
+                    </tr>
                   )
                   }
                  )

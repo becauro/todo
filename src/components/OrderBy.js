@@ -37,18 +37,20 @@ export default class OrderBy extends React.Component {
         </label> <br/>
         <label htmlFor="Status">
         <input
-        checked={ field === 'status' || false }
-        name="field"
-        type="radio" 
-        value='status' onChange={ this.handleField } id="Status" />
+          checked={ field === 'status' || false }
+          name="field"
+          type="radio" 
+          value='status' onChange={ this.handleField } id="Status"
+        />
           Status
         </label> <br/>
         <label htmlFor="Date">
         <input
-        checked={ field === 'creationDate' || false }
-        name="field"
-        type="radio"
-        value='creationDate' onChange={ this.handleField } id="Date" />
+          checked={ field === 'creationDate' || false }
+          name="field"
+          type="radio"
+          value='creationDate' onChange={ this.handleField } id="Date"
+        />
           Date
         </label> <br/>
       </div>
