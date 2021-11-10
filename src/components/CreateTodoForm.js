@@ -7,7 +7,7 @@ export class CreateTodoForm extends React.Component {
 
     this.state = {
       task: '',
-      status: '',
+      status: 'pendente',
     };
 
     this.handleField = this.handleField.bind(this);
@@ -30,7 +30,7 @@ export class CreateTodoForm extends React.Component {
   };
 
   render() {
-    const { task } = this.state;
+    const { task, status } = this.state;
     return (
       <form>
         <div className="form-group">
@@ -48,6 +48,7 @@ export class CreateTodoForm extends React.Component {
         <div className="form-group">
         <label htmlFor="pendente">
           <input
+            checked={ status === "pendente" || false }
             onChange={ this.handleField }
             name="status"
             type="radio"
