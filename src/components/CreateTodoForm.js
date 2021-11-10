@@ -6,8 +6,8 @@ export class CreateTodoForm extends React.Component {
     super();
 
     this.state = {
-        task: '',
-        status: '',
+      task: '',
+      status: '',
     };
 
     this.handleField = this.handleField.bind(this);
@@ -32,9 +32,9 @@ export class CreateTodoForm extends React.Component {
   render() {
     const { task } = this.state;
     return (
-      <form onSubmit={this.submitHandler}>
+      <form>
         <div className="form-group">
-          <label htmlFor="text">Text:</label>
+          <label htmlFor="text">Text:
           <input
           onChange={ this.handleField }
           className="form-control"
@@ -43,6 +43,7 @@ export class CreateTodoForm extends React.Component {
           id="text"
           value={task}
           />
+          </label>
         </div>
         <div className="form-group">
         <label htmlFor="pendente">
@@ -56,16 +57,28 @@ export class CreateTodoForm extends React.Component {
             Pendente
           </label>
           <label htmlFor="andamento">
-          <input name="status" type="radio" value='Em andamento' onChange={ this.handleField } id="andamento" />
+          <input
+            onChange={ this.handleField }
+            name="status"
+            type="radio"
+            value='Em andamento'
+            id="andamento"
+          />
             Em andamento
           </label>
           <label htmlFor="pronto">
-          <input name="status" type="radio" value='pronto' onChange={ this.handleField } id="pronto" />
+          <input
+            name="status"
+            type="radio"
+            value='pronto'
+            onChange={ this.handleField }
+            id="pronto"
+          />
             Pronto
           </label>
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-primary">
+          <button type="button" className="btn btn-primary" onClick={this.submitHandler}>
           Save Todo
           </button>
         </div>
