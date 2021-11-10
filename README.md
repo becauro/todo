@@ -1,4 +1,4 @@
-# Front-end de um Todo List
+# Front-end de um "Todo List"
 
 ### Introdução:
 
@@ -7,14 +7,15 @@ Bora se organizar ?
 
 [Clique aqui](https://becauro-todo-list.herokuapp.com/) e veja a aplicação rodando, graças ao **Heroku**.
 
-**Observação**: Por ora não foquei em estética, está em desenvolvimento ainda.
+**Observação**: Por ora o projeto não teve foco na estética, pois ainda está em fase de desenvolvimento.
 
 ### Funcionalidades básicas:
 
-* **Visualização** de todas tarefas, ordenável por:
-  * Tarefa
-  * Status
-  * Data de Criação
+* **Visualização** de todas tarefas, ordenável por: _Tarefa_, _Status_ ou _Data de Criação_
+  * **Observações**:
+    * A ordenação é feita, por ora, apenas por _ordem crescente_
+    * Como foi usado o método `sort()` para ordenação, a referência de ordem dos caracteres é a tabela [ASCII](https://en.wikipedia.org/wiki/ASCII#Printable_characters). Portanto, letra maiúsculas vêm sempre antes de acordo com essa tabela. Mas isso só é válido, aqui, entre _letras iguais_, pois usei a função [toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) do próprio método `sort()`, que permite ignorar _case sensitive_ entre _letras diferentes_.
+
 * **Inserção** de tarefa
 * **Remoção** de tarefa
 * **Atualização** de tarefa
@@ -25,7 +26,7 @@ Bora se organizar ?
   * Pendente 
   * Em andamento
   * Pronto
-* **Created**: Data de criação, gerada automáticamente.
+* **Created**: Data de criação da tarefa. Atributo gerado automaticamente.
 
 ### Tecnologias usadas
 
@@ -38,19 +39,19 @@ Bora se organizar ?
 ### Requisitos para configurar e rodar o projeto em modo desenvolvimento:
 
 1. Ter **Node.js** para baixar as dependências via NPM.
-2. Ter a **porta 3000** disponível, menos que configure outra porta.
+2. Ter a **porta 3000** disponível, a menos que queira configurar antes de rodar.
 3. Ter um **Browser** compatível com as últimas tecnologias de mercado ( ex.: _Chrome_ ou _Firefox_) para interação com a interface da Aplicação.
 
 ### Como configurar as dependências do projeto:
 
-Um vez que no arquivo `package.json` é listado as dependências necessárias, basta digitar o seguinte comando estando na pasta do repositório clonado:
+Um vez que no arquivo `package.json` é listado as dependências necessárias, basta digitar o seguinte comando, estando na pasta do repositório clonado:
 
     `npm install`
 
 ### Como executar o projeto:
 
-1. Uma vez na pasta do projeto, basta executar o comando: `npm start`
-2. Em seguida, abra o navegador e digite: **http://localhost:3000** (Essa é a porta padrão).
+1. Estando dentro pasta do projeto, basta executar o comando: `npm start`
+2. Em seguida, abra o navegador e digite: **http://localhost:3000** (porta padrão).
 
 ### Sobre a estrutura do projeto:
 
@@ -59,7 +60,7 @@ Para fins de testes de desenvolvimento e de forma temporária, dependendo do mom
 * Armazenamento dos dados (ou seja, simulando o papel de um Banco de Dados e camada MODEL).
 * Intermediar os dados entre as páginas/componentes (Ou seja, simulando o papel de um Redux e camada SERVICES).
 
-O arquivo que armazena essas lógicas acima é o `src/services/api_localStorage.js`.
+O arquivo que armazena as lógicas mencionadas acima é: `src/services/api_localStorage.js`.
 
 Nesse projeto foi usado apenas **Componentes Tipo Classe**.
 
@@ -72,17 +73,16 @@ Nesse projeto foi usado apenas **Componentes Tipo Classe**.
 
 ## Futuras Tecnologias :
 
-1. **Redux** como intermediador, ao invés de localStorage.
+1. **Redux** para gerenciamento de estados, ao invés de simulação disso com o _localStorage_.
 
-#### BACKEND (outro repo):
+#### BACKEND (outro repo, em breve):
 
-2. **MongoDb** como Banco de Dados, ao invés de localStorage.
-3. **Express** como API parar Banco de Dados e lógica de negócio, ao invés de um arquivo de API exportando funcões JS de métodos que manipulam LocalStorage. 
-5. **Arquitetura MSC** para implantar os itens anteriores.
-6. **JWT** para gerenciamento de permissões de usuários.
+2. **MongoDb** como Banco de Dados, ao invés de armazenamento de todos dados no _localStorage_.
+3. **Express** para contrução de API para Banco de Dados e lógica de negócio, ao invés de um "arquivo de API" exportando funcões JS de métodos que manipulam _LocalStorage_. 
+5. **JWT** para gerenciamento de permissões de usuários.
+6. **Arquitetura MSC** para estruturar e organizar o código backend.
 
 ## Referências:
 
 * [Trybe Course](https://www.betrybe.com/)
-* [Este Repositório](https://github.com/satansdeer/mern-crud)
 * [Stackoverflow](https://stackoverflow.com/)
