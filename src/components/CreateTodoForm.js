@@ -1,5 +1,6 @@
 import React from "react";
 import { create } from '../services/api_localStorage';
+import { Link } from 'react-router-dom';
 
 export class CreateTodoForm extends React.Component {
  constructor() {
@@ -82,8 +83,12 @@ export class CreateTodoForm extends React.Component {
         </div>
         <div className="form-group">
           <button type="button" className="btn btn-primary" onClick={this.submitHandler}>
-          Save Todo
+            Save Todo
           </button>
+          &nbsp; &nbsp;
+          <Link to="/" className="btn btn-danger">
+            Cancel
+          </Link>
         </div>
       </form>
     );
