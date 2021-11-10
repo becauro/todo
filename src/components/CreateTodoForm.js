@@ -16,7 +16,9 @@ export class CreateTodoForm extends React.Component {
   componentWillUnmount() {
     const { status, task } = this.state;
     
-    create({ status, task });
+    if (task !== '') {
+      create({ status, task });
+    };
   };
 
   submitHandler = () => {
