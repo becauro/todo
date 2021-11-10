@@ -14,18 +14,15 @@ export class CreateTodoForm extends React.Component {
     this.handleField = this.handleField.bind(this);
   };
 
-  componentWillUnmount() {
+  submitHandler = () => {
+    const { onSubmit } = this.props;
     const { status, task } = this.state;
     
     if (task !== '') {
       create({ status, task });
+      onSubmit();
     };
-  };
-
-  submitHandler = () => {
-    const { onSubmit } = this.props;
-
-    onSubmit();
+    alert('Preencha uma tarefa');
   };
 
   handleField({ target }) {
