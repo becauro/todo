@@ -74,7 +74,7 @@ Nesse projeto foi usado apenas **Componentes Tipo Classe**.
 
 1. **Redux** como intermediador, ao invés de localStorage.
 
-### BACKEND (outro repo):
+#### BACKEND (outro repo):
 
 2. **MongoDb** como Banco de Dados, ao invés de localStorage.
 3. **Express** como API parar Banco de Dados e lógica de negócio, ao invés de um arquivo de API exportando funcões JS de métodos que manipulam LocalStorage. 
