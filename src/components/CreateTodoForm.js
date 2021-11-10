@@ -20,8 +20,8 @@ export class CreateTodoForm extends React.Component {
     
     if (task !== '') {
       create({ status, task });
-      onSubmit();
-    };
+      return onSubmit();
+    };  
     alert('Preencha uma tarefa');
   };
 
