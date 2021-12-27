@@ -31,7 +31,7 @@ Bora se organizar ?
 ### Tecnologias usadas
 
 * **Java Script**
-* **React** 
+* **React**
 * **Bootstrap**
 * **CSS**
 * **Heroku**
@@ -69,7 +69,7 @@ Nesse projeto foi usado apenas **Componentes Tipo Classe**.
 
 1. Botão para _redirecionar_ para página de listagens de tarefas, ao invés fazer isso, automaticamente, após Criação ou Atualização de tarefas.
 2. Botão para _desfazer as mudanças_ no formulario de atualização, antes de salvá-las.
-3. **Cadastro** e **Login** de Usuários da plataforma, cada um tendo sau própria conta parar gereniamento de tarefas. Cadastro e login mesmo(de verdade), não uma validação de forms de tela de login (hehe). Para isso usarei a stack **MERN**.
+3. **Cadastro** e **Login** de Usuários da plataforma, cada um tendo sua própria conta parar gereniamento de tarefas. Para isso usarei a stack **MERN**.
 
 ## Futuras Tecnologias :
 
