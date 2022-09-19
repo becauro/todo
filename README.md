@@ -3,7 +3,6 @@
 ### Introdução:
 
 Esse é o código de uma aplicação básica de **Lista de Tarefas**.
-Bora se organizar ?
 
 [Clique aqui](https://becauro-todo-list.herokuapp.com/) e veja a aplicação rodando, graças ao **Heroku**.
 
