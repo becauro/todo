@@ -4,7 +4,9 @@
 
 Esse é o código de uma aplicação básica de **Lista de Tarefas**.
 
-[Clique aqui](https://becauro-todo-list.herokuapp.com/) e veja a aplicação rodando, graças ao **Heroku**.
+[Clique aqui](https://becauro-todo-list.herokuapp.com/) e veja a aplicação rodando no **Heroku**.
+Se o link estiver quebrado, provavelmente é porque o Heroku descontinuou o Serviço Gratuito de hospedagem, conforme já haviam comunicado.
+
 
 **Observação**: Por ora o projeto não teve foco na estética, pois ainda está em fase de desenvolvimento.
 
