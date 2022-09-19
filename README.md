@@ -81,8 +81,3 @@ Nesse projeto foi usado apenas **Componentes Tipo Classe**.
 3. **Express** para contrução de API para Banco de Dados e lógica de negócio, ao invés de um "arquivo de API" exportando funcões JS de métodos que manipulam _LocalStorage_. 
 5. **JWT** para gerenciamento de permissões de usuários.
 6. **Arquitetura MSC** para estruturar e organizar o código backend.
-
-## Referências:
-
-* [Trybe Course](https://www.betrybe.com/)
-* [Stackoverflow](https://stackoverflow.com/)
